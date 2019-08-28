@@ -37,11 +37,5 @@ ReactDOM.render(
     document.querySelector('#root')
 );
 
-// Rules of state:
-//      Only usable iwht class components
-//      You will confuse props with state
-//      'state' is a JS object that contains data relevant to a component
-//      Update 'state' causes the component to almost instantly render
-//      State must be initialized when a component is created
-//      State can only be updated using the functioon 'setState'
+// Lifecycle Mehtods (in order): constructor -> render -> componentDidMount -> componentDidUpdate -> componentWillUnmount
 
