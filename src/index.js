@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SeasonDisplay from './SeasonDisplay';
+
+
+// goal to show season display
 
 class App extends React.Component{
     state = {lat:null, errorMessage:''};
@@ -19,7 +23,8 @@ class App extends React.Component{
         }
 
         if (!this.state.errorMessage && this.state.lat){
-            return(<div> Latitude: {this.state.lat} </div>)
+            // pass prop to child component
+            return <SeasonDisplay lat={this.state.lat}/>;
         }
 
         return(
