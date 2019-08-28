@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 //problem: getting latatude is takeing some time...
+//
 
 class App extends React.Component{
     // first function is called, a good place to initialize state
@@ -9,18 +10,19 @@ class App extends React.Component{
         //super is a reference to the parent's constructor
         //will produce ReferenceError: this super() hasn't been called
         super(props);
-        // state object
+        // state object with key/value pair
         this.state = {lat:null};
-    }    
-    
-    // React says we have to define render!!
-    render(){
         // Function to determine geolocation
         window.navigator.geolocation.getCurrentPosition(
             (position)=> console.log(position),
             (err) => console.log(err)
         );
-        return <div>Latitude: </div>
+    }    
+    
+    // React says we have to define render!!
+    // render gets called all the time, do not put time consuming methods in this area
+    render(){
+        return <div>Latitude:{this.state.lat} </div>
     }
 }
 ReactDOM.render(
