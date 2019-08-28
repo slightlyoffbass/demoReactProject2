@@ -1,4 +1,5 @@
-#### Geolocation App
+# Geolocation App
+This project is code used in React/Redux online course
 
 ## Create App
 npx create-react-app dempoproject2
