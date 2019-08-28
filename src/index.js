@@ -11,11 +11,15 @@ class App extends React.Component{
         //will produce ReferenceError: this super() hasn't been called
         super(props);
         // state object with key/value pair
+        //THIS IS THE ONLY TIME WE DO DIRECT ASSIGNMENT TO THIS.STATE
         this.state = {lat:null};
         // Function to determine geolocation
         window.navigator.geolocation.getCurrentPosition(
-            (position)=> console.log(position),
-            (err) => console.log(err)
+            position=> {
+                // update set state
+                this.setState({ lat: position.coords.latitude });
+            },
+            err => console.log(err)
         );
     }    
     
